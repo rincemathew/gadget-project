@@ -1,0 +1,58 @@
+{% load static %}
+{% block content_css %}
+<style>
+    .newsletter {
+        padding: 5px 0 5px 0;
+        background-color: var(--main-yellow);
+    }
+    .normalpadding{
+        padding: 10px 0 10px 0px;
+    }
+    
+</style>
+{% endblock %}
+
+<div>
+    <div class="newsletter flex-box">
+        <div class="desk-9">
+            Sign up to Newsletter
+        </div>
+    </div>
+    <div style="background-color: #f8f8f8;" class="flex-box">
+        <div style="display: flex;justify-content: center;" class="desk-9 mob-12">
+            <div class="desk-5">
+                <div class="normalpadding">
+                    <a href="/"><img loading="lazy" style="filter: drop-shadow(10px 10px 15px purple);"
+                            src="{% static 'images/icons/logo-main.png' %}" alt="gadget4india.com"></a>
+                </div>
+                <div class="normalpadding">
+                    <b> Contact Info:</b><br>
+                    <a href="https://www.linkedin.com/in/rince-mathew/" target="_blank">https://www.linkedin.com/in/rince-mathew/</a>
+                </div>
+            </div>
+            <div style="display: flex;justify-content: center;" class="desk-7">
+                <div class="desk-6 normalpadding">
+                    <b>Find it Fast</b><br>
+                    <a href="/smartphones">Mobile</a><br>
+                    <a href="/">Tablet</a><br>
+                    <a href="/articles">Articles</a><br>
+                    <a href="/earwear">Earware</a><br>
+                    <a href="/wearables">Wearable</a><br>
+                </div>
+                <div class="desk-6 normalpadding">
+                    <b>Informations</b><br>
+                    <a href="/aboutus">About Us</a><br>
+                    <a href="/contactus">Contact Us</a><br>
+                    <a href="/sitemap">SiteMap</a><br>
+                    <a href="/privacypolicy">Privacy Policy</a><br>
+                    <a href="/termsandconditions">Terms & Conditions</a><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #eaeaea;" class="flex-box">
+        <div style="padding: 5px 0 5px 5px;" class="desk-9 mob-12">
+            © Gadget4India - All rights Reserved
+        </div>
+    </div>
+</div>

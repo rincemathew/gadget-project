@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gadget-4-india",
+  "private_key_id": "48de15959fc7a8ac606b0c5659ac0a8471a64644",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCOzN9tR+am/hIw\n9GgyGUzTpil12fimKFe0ew4sVUlVxy0VgJiVGCNygCZ8ofD8F2WCTEHW7CWSV8KJ\nOSwFve7ayKlbJOMe1VGglA48zCSXwb+emU5yDoEk7pAVq1NqIh0jDvt7RYgvjy1L\niEfn21z4wsLGiZu3V7c4UY6rzwwHO9NQVNv6fXuWltLoiIHcUTifWhmZHDJBeoM1\nwz6XkhXnj8xIx3tmr+9HqKTUEpxVAK/1lWrcTzaPZiwKoHO09UD3Rnc9q8sQJV7r\nMYgnXglpeha6gkU4pcMjmqQ1fX141wnavLQHpVrSQDd16HToQy2lZjngUBE9CX2K\nRVfCwUE9AgMBAAECggEADtgMF6OEPfKmOHGHjUGlA1E/+RC18Ku75jZudDxPWbvR\nG22ZLtJqCOJ6XbVFxCa4dhFwPKOiijJWNgZ75YLnW9XFCQTuGQvqpssNKdO8sAvD\nW/yqs19/nDOyRZZgHuW56qWJjbheHjd/aV0awGbEpNU2AwZV6fqTwKZ1srVcljnB\njvrBCUPBFCvmdqaRmpUhPMlI87ZMS/K6vEUZS/7/uoEfa/OE1WvRjjjvDY/oiKbr\nxl2MPsn6dj5+LHOl7eXIBrEaUGf66TK0PvlEhfX1L9sXlbDLatOKETQiKXN5HsEB\niUov/UWYgin0q34m6mHdenfpez8028NiWjMvc8jnfwKBgQC/frQJnOSXvFUSqWHg\nTb4ZsS6+GINI7zNehP4wKtKL+INlpsTDqUKON6F6ETVT1eEcszkVCzomPtJoVtN7\nLGCUE2zsRZHK3ZBEc1Cel70/PDDM7Ru6yoc0KNGFk71PPqmhiyRgC1h12GeFdgna\nFHPLA9GruNhLjYNGhORghSl+qwKBgQC+5w4BBJoF9RabOv9QoIc3IjuZ2CUFRSmG\nZK45p5pdoRRoZW/onMQql388tG+W5piUPojN+nwcpphLsvsLwMB+gENmWVxyDVts\nXODWWaEVtzSt0wXi2LrPz7HmyawXrAPfdacyzkOe9Vt0QsPaS5kgvpNpOlMvo01k\nhlhRL0MftwKBgHJD5qY9ymGIbbMfA1pWyXKHOX8RHXWt1hc2gH65br064x0K8CpY\nm3BFXcN69Tk7TIJVp2AZPO+JWQANn0/GYTK6jKpHsQE+SFGwBZE8th4/ilcdvQgu\nxZKoMK3mRHY+y/WrE1+EJZrcMJmAn8xTm+yuMLSpLdeXb5fqwGOf0ezVAoGAXiFa\nA2B8ffGCqxolKGFvKt1jXBF696VJu23LhrxA3mf9wxg5XQ5nn8TBxXIHD/Y2R+qp\n1D7tkccHk1P2e64YfIfMNBxd/BLgAIeviaH6TtXeUNObtGY/fxafVvgcNjPoWPgP\ncHrKVwgOhz4ginP6Vm4CC8HpoLS6BZZE2Asg4vMCgYEAsJdeuNyVCQMlmQzlUxie\nXcxwnggKKZNduAv2h1S18zXxCv0IBk+9H0V/ygZtVXc9U+s2FQpM1UUmGye//QQ+\nMhNtJ9q6Dl/441Zx5feD6HJvMgELgzcNl8xbzzTDwOhAJEgrwPnq9zYyLXMhnAhp\nF6HsEGzKyfrG8XvNKzgECzU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gadget-4-india@gadget-4-india.iam.gserviceaccount.com",
+  "client_id": "100782985659643612455",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gadget-4-india%40gadget-4-india.iam.gserviceaccount.com"
+}

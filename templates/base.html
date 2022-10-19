@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+   
+    {% block title_des %} {% endblock %}
+    <link rel="shortcut icon" href="{% static 'images/icons/favicon.ico' %}"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+    {% block content_bootstrap %}  {% endblock %}
+    
+    <style>
+        :root {
+            --main-yellow: #fed700;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+            --gray-lite: #eaeaea;
+            --black: #333e48;
+            --blue: #0062bd;
+        }
+    
+        * {
+            box-sizing: border-box;
+        }
+    
+        @media only screen and (min-width: 768px) {
+            .desk-1 {width: 8.33%;}
+            .desk-2 {width: 16.66%;}
+            .desk-3 {width: 25%;}
+            .desk-4 {width: 33.33%;}
+            .desk-5 {width: 41.66%;}
+            .desk-6 {width: 50%;}
+            .desk-7 {width: 58.33%;}
+            .desk-8 {width: 66.66%;}
+            .desk-9 {width: 75%;}
+            .desk-10 {width: 83.33%;}
+            .desk-11 {width: 91.66%;}
+            .desk-12 {width: 100%;}
+            .desk-display {display: none;}
+        }
+    
+        @media only screen and (max-width: 768px) {
+            .mob-1 {width: 8.33%;}
+            .mob-2 {width: 16.66%;}
+            .mob-3 {width: 25%;}
+            .mob-4 {width: 33.33%;}
+            .mob-5 {width: 41.66%;}
+            .mob-6 {width: 50%;}
+            .mob-7 {width: 58.33%;}
+            .mob-8 {width: 66.66%;}
+            .mob-9 {width: 75%;}
+            .mob-10 {width: 83.33%;}
+            .mob-11 {width: 91.66%;}
+            .mob-12 {width: 100%;}
+            .mob-display {display: none;}
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    {% block content_css %}  {% endblock %}
+    {% block other_contents %} {% endblock %}
+</head>
+
+<body style="padding: 0; margin: 0;">
+{% include 'header.html' %}
+{% block content_main %}
+{% endblock %}
+{% include 'footer.html' %}
+</body>
+{% block content_js %}{% endblock %}
+</html>

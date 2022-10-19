@@ -1,0 +1,7 @@
+Django==3.2.8
+psycopg2
+django-storages[google]
+Pillow
+djangorestframework
+django-filter
+django-cors-headers

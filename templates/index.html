@@ -1,0 +1,446 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_des %}<title>Indian Gadget discoverable site | Search Mobiles | Compare Mobiles | Mobile price | Mobile Review | gadgetin.in</title>
+<meta name="description" content="Worried about which gadgets to buy?? Let's explore all the details and news about gadgets in India.">{% endblock %}
+{% block content_bootstrap %} 
+<!-- bootstrap deletable file -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+ {% endblock %}
+ {% block content_css %}
+ <style>
+ .leftButton{
+    max-width: 40px;
+    min-width: 40px;
+    margin-right: 10px;
+}
+.rightButton{
+    float: right;
+max-width: 40px;
+min-width: 40px;
+margin-left: 10px;
+}
+.content{
+    position: relative;
+    overflow: hidden;
+}
+.content-inside{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    /* scroll hide in mozilla and edge */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.card{
+    flex: 0 0 auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.padding-for-scroll{
+    padding: 16px;
+}
+.max-length{
+    max-height: 250px;
+}
+.article-max-indexpage{
+    max-height: 200px;
+}
+.max-name-width{
+    max-width: 400px;
+    white-space: initial;
+}
+</style>
+{% endblock %}
+{% block content_main %}
+<div class="main-color">
+    <div class="container">
+        <div class="padding-global">
+            <div class="white-color">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="float: left;">
+                            <h1>Latest Phones</h1>
+                        </div>
+                        <div style="float: right;">
+                            <a href="/latest-phones/">View more..</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="content d-flex" id="content-new">
+                            <div class="leftButton align-self-center d-none d-sm-block">
+                                <a href="#" id="left-button-new"><img
+                                        src="{% static 'images/icons/arrow-left.svg' %}" /></a>
+                            </div>
+                            <div class="content-inside align-self-center" id="content-inside-new">
+                                {% for latestMobile in latest_mobiles %}
+                                <div class="card row padding-for-scroll">
+                                    <div>
+                                    <a href="/{{ latestMobile.brandName.brand_name_url }}/{{ latestMobile.mobile_name_url }}/">
+                                        <!-- <div class="row"> -->
+                                        <div class="col-12 d-flex justify-content-center">
+                                        {% if latestMobile.mobile_image %}
+                                        <img class="max-length"
+                                                src="https://storage.googleapis.com/gadget-bucket/{{ latestMobile.mobile_image }}" />
+                                        {% else %}
+                                        <img class="max-length"
+                                                src="{% static 'images/icons/mobile-no-image.jpg' %}" />
+                                        {% endif %}
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <h6>{{ latestMobile.brandName.brand_name }}</h6>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            {{ latestMobile.mobile_name }}
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            {{ latestMobile.mobile_Variant.all.0.mobileGeneral.price }}
+                                        </div>
+                                    </a>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <select id="target" class="custom-select">
+                                            {% for variantsPrice in latestMobile.mobile_Variant.all %}
+                                            <option value="1">{{ variantsPrice.mobile_variants }}</option>
+                                            <optgroup label="Price: {{ variantsPrice.mobileGeneral.price }}"></optgroup>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="rightButton align-self-center d-none d-sm-block">
+                                <a href="#" id="right-button-new"><img
+                                        src="{% static 'images/icons/arrow-right.svg' %}" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-global">
+            <div class="white-color">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="float: left;">
+                            <h1>Premium Phones</h1>
+                        </div>
+                        <div style="float: right;">
+                            <a href="/budget-phones/">View more..</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="content d-flex" id="content-budget">
+                            <div class="leftButton align-self-center d-none d-sm-block">
+                                <a href="#" id="left-button-budget"><img
+                                        src="{% static 'images/icons/arrow-left.svg' %}" /></a>
+                            </div>
+                            <div class="content-inside align-self-center" id="content-inside-budget">
+                                {% for budgetMobile in budget_mobiles %}
+                                <div class="card row padding-for-scroll">
+                                    <a href="/{{ budgetMobile.mobileNames.brandName.brand_name_url }}/{{ budgetMobile.mobileNames.mobile_name_url }}/?variant={{budgetMobile.mobile_variants_url}}">
+                                        <div class="col-12 d-flex justify-content-center">
+                                        {% if budgetMobile.mobileNames.mobile_image %}
+                                        <img class="max-length"
+                                                src="https://storage.googleapis.com/gadget-bucket/{{ budgetMobile.mobileNames.mobile_image }}" />
+                                        {% else %}
+                                        <img class="max-length"
+                                                src="{% static 'images/icons/mobile-no-image.jpg' %}" />
+                                        {% endif %}
+                                            
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <h6>{{ budgetMobile.mobileNames.brandName.brand_name }}</h6>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            {{ budgetMobile.mobileNames.mobile_name }}
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            {{ budgetMobile.mobileGeneral.price }}
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            {{ budgetMobile.mobile_variants}}
+                                        </div>
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="rightButton align-self-center d-none d-sm-block">
+                                <a href="#" id="right-button-budget"><img
+                                        src="{% static 'images/icons/arrow-right.svg' %}" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-global">
+            <div class="white-color">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="float: left;">
+                            <h1>Reviews & News</h1>
+                        </div>
+                        <div style="float: right;">
+                            <a href="/articles/">View more..</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="content d-flex" id="content-review">
+                            <div class="leftButton align-self-center d-none d-sm-block">
+                                <a href="#" id="left-button-review"><img
+                                        src="{% static 'images/icons/arrow-left.svg' %}" /></a>
+                            </div>
+                            <div class="content-inside align-self-center" id="content-inside-review">
+                                {% for articleList in articles_list %}
+                                <div class="card row padding-for-scroll">
+                                    <a href="/articles/{{ articleList.article_name_url }}/">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <img class="article-max-indexpage"
+                                                src="https://storage.googleapis.com/gadget-bucket/{{ articleList.article_thumbnail }}" />
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center max-name-width">
+                                           <h6>{{ articleList.article_name }}</h6>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            {{ articleList.article_type }}
+                                        </div>
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="rightButton align-self-center d-none d-sm-block">
+                                <a href="#" id="right-button-review"><img
+                                        src="{% static 'images/icons/arrow-right.svg' %}" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-global">
+            <div class="white-color">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="float: left;">
+                            <h1>Earwear</h1>
+                        </div>
+                        <div style="float: right;">
+                            <a href="/earwear/">View more..</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="content d-flex" id="content-earware">
+                            <div class="leftButton align-self-center d-none d-sm-block">
+                                <a href="#" id="left-button-earware"><img
+                                        src="{% static 'images/icons/arrow-left.svg' %}" /></a>
+                            </div>
+                            <div class="content-inside align-self-center" id="content-inside-earware">
+                                {% for earList in ear_wear_list %}
+                                <div class="card row padding-for-scroll">
+                                    <a href="/earwear/{{earList.earBrandName.ear_brand_name_url}}/{{earList.ear_name_url}}">
+                                        <div class="col-12 d-flex justify-content-center">
+                                        {% if earList.ear_picture %}
+                                        <img style="max-width: 245px;" class="img-fluid"
+                                                src="https://storage.googleapis.com/gadget-bucket/{{ earList.ear_picture }}" />
+                                        {% else %}
+                                        <img style="max-width: 245px;" class="img-fluid"
+                                                src="{% static 'images/icons/no-image.jpg' %}" />
+                                        {% endif %}   
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                           <h6>{{ earList.earBrandName.ear_brand_name }} {{ earList.ear_name }}</h6>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            Rs. {{ earList.ear_price }}
+                                        </div>
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="rightButton align-self-center d-none d-sm-block">
+                                <a href="#" id="right-button-earware"><img
+                                        src="{% static 'images/icons/arrow-right.svg' %}" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-bottom: 10px;" class="padding-global">
+            <div class="white-color">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="float: left;">
+                            <h1>Wearable</h1>
+                        </div>
+                        <div style="float: right;">
+                            <a href="/wearables/">View more..</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="content d-flex" id="content-earware">
+                            <div class="leftButton align-self-center d-none d-sm-block">
+                                <a href="#" id="left-button-wearware"><img
+                                        src="{% static 'images/icons/arrow-left.svg' %}" /></a>
+                            </div>
+                            <div class="content-inside align-self-center" id="content-inside-wearware">
+                                {% for wearList in wear_wear_list %}
+                                <div class="card row padding-for-scroll">
+                                    <a href="/wearables/{{wearList.wearBrandName.wear_brand_name_url}}/{{wearList.wear_name_url}}">
+                                        <div class="col-12 d-flex justify-content-center">
+                                        {% if wearList.wear_picture %}
+                                        <img style="max-width: 245px;" class="img-fluid"
+                                                src="https://storage.googleapis.com/gadget-bucket/{{ wearList.wear_picture }}" />
+                                        {% else %}
+                                        <img style="max-width: 245px;" class="img-fluid"
+                                                src="{% static 'images/icons/no-image.jpg' %}" />
+                                        {% endif %}
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                           <h6>{{ wearList.wearBrandName.wear_brand_name }} {{ wearList.wear_name }}</h6>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            Rs. {{ wearList.wear_price }}
+                                        </div>
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="rightButton align-self-center d-none d-sm-block">
+                                <a href="#" id="right-button-wearware"><img
+                                        src="{% static 'images/icons/arrow-right.svg' %}" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-bottom: 10px;" class="padding-global">
+            <div class="white-color">
+                <div class="content d-flex" id="content">
+                    <div class="leftButton align-self-center d-none d-sm-block">
+                        <a href="#" id="left-button"><img src="{% static 'images/icons/arrow-left.svg' %}" /></a>
+                    </div>
+                    <div class="content-inside align-self-center" id="content-inside">
+                        <div class="card"><a href="/realme/"><img src="{% static 'images/image/realme.png' %}" /></a></div>
+                        <div class="card"><a href="/oneplus/"><img src="{% static 'images/image/oneplus.png' %}" /></a></div>
+                        <div class="card"><a href="/oppo/"><img src="{% static 'images/image/oppo.png' %}" /></a></div>
+                        <div class="card"><a href="/vivo/"><img src="{% static 'images/image/vivo.png' %}" /></a></div>
+                        <div class="card"><a href="/samsung/"><img src="{% static 'images/image/samsung.png' %}" /></a></div>
+                        <div class="card"><a href="/poco/"><img src="{% static 'images/image/poco.png' %}" /></a></div>
+                        <div class="card"><a href="/xiaomi/"><img src="{% static 'images/image/xiaomi.png' %}" /></a></div>
+                        <div class="card"><a href="/motorola/"><img src="{% static 'images/image/motorola.png' %}" /></a></div>
+                        <div class="card"><a href="/apple/"><img src="{% static 'images/image/apple.png' %}" /></a></div>
+                        <div class="card"><a href="/nokia/"><img src="{% static 'images/image/nokia.png' %}" /></a></div>
+                        <div class="card"><a href="/micromax/"><img src="{% static 'images/image/micromax.png' %}" /></a></div>
+                        <div class="card"><a href="/huawei/"><img src="{% static 'images/image/huawei.png' %}" /></a></div>
+                    </div>
+                    <div class="rightButton align-self-center d-none d-sm-block">
+                        <a href="#" id="right-button"><img src="{% static 'images/icons/arrow-right.svg' %}" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content_js %}
+<script>
+    /* brand list in horizontal list */
+$('#left-button').click(function() {
+    event.preventDefault();
+    $('#content-inside').animate({
+      scrollLeft: "-=100px"
+    }, "slow");
+  });
+
+   $('#right-button').click(function() {
+    event.preventDefault();
+    $('#content-inside').animate({
+     scrollLeft: "+=100px"
+    }, "slow");
+  });
+
+/* new phone list in horizontal list */
+$('#left-button-new').click(function() {
+    event.preventDefault();
+    $('#content-inside-new').animate({
+      scrollLeft: "-=100px"
+    }, "slow");
+  });
+
+   $('#right-button-new').click(function() {
+    event.preventDefault();
+    $('#content-inside-new').animate({
+     scrollLeft: "+=100px"
+    }, "slow");
+  });
+/* make the first option of <select> selected with jQuery */
+  $("#target").val($("#target option:first").val());
+
+/* budget phone list in horizontal list */
+$('#left-button-budget').click(function() {
+  event.preventDefault();
+  $('#content-inside-budget').animate({
+    scrollLeft: "-=100px"
+  }, "slow");
+});
+
+ $('#right-button-budget').click(function() {
+  event.preventDefault();
+  $('#content-inside-budget').animate({
+   scrollLeft: "+=100px"
+  }, "slow");
+});
+
+/* articles list in horizontal list */
+$('#left-button-review').click(function() {
+  event.preventDefault();
+  $('#content-inside-review').animate({
+    scrollLeft: "-=100px"
+  }, "slow");
+});
+
+ $('#right-button-review').click(function() {
+  event.preventDefault();
+  $('#content-inside-review').animate({
+   scrollLeft: "+=100px"
+  }, "slow");
+});
+
+/* earware list in horizontal list */
+$('#left-button-earware').click(function() {
+  event.preventDefault();
+  $('#content-inside-earware').animate({
+    scrollLeft: "-=100px"
+  }, "slow");
+});
+
+ $('#right-button-earware').click(function() {
+  event.preventDefault();
+  $('#content-inside-earware').animate({
+   scrollLeft: "+=100px"
+  }, "slow");
+});
+$('#left-button-wearware').click(function() {
+  event.preventDefault();
+  $('#content-inside-wearware').animate({
+    scrollLeft: "-=100px"
+  }, "slow");
+});
+
+ $('#right-button-wearware').click(function() {
+  event.preventDefault();
+  $('#content-inside-wearware').animate({
+   scrollLeft: "+=100px"
+  }, "slow");
+});
+</script>{% endblock %}
